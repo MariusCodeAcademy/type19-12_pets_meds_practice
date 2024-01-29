@@ -10,6 +10,11 @@ const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 export default function PetsPage() {
   const [petsArr, setPetsArr, isLoading] = useApiData(url);
 
+  function handleDelete() {
+    // kai gaunam sekminga istrynimo atsakyma is back end
+    // atnaujinam petsArr kad nebebutu to el kuri istrynem
+  }
+
   console.log('petsArr ===', petsArr);
 
   return (

@@ -1,0 +1,22 @@
+GET https://glittery-dull-snickerdoodle.glitch.me/v1/pets
+
+###
+DELETE https://glittery-dull-snickerdoodle.glitch.me/v1/pets/442
+
+### logs for pet with id 430
+
+GET https://glittery-dull-snickerdoodle.glitch.me/v1/logs/430
+
+### add logs for pet with id 430
+
+POST https://glittery-dull-snickerdoodle.glitch.me/v1/logs
+
+### view all med 
+
+GET  https://glittery-dull-snickerdoodle.glitch.me/v1/meds
+
+### add med
+
+POST  https://glittery-dull-snickerdoodle.glitch.me/v1/meds
+
+
