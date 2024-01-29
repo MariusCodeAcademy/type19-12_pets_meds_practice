@@ -21,9 +21,7 @@ export default function PetsPage() {
       </div>
       <ul>
         {petsArr.map((pObj) => (
-          <li key={pObj.id}>
-            <SinglePetCard item={pObj} />
-          </li>
+          <SinglePetCard key={pObj.id} item={pObj} />
         ))}
       </ul>
     </div>
