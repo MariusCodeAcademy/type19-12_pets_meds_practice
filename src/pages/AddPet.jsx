@@ -49,12 +49,6 @@ export default function AddPet() {
   return (
     <div className='container'>
       <PageHeader title='Add Pet' to='/' linkText='Go back' />
-      {/* <div className='my-5 flex items-center justify-between'>
-        <h1 className='text-4xl'>Add Pet</h1>
-        <Link to='/'>
-          <Button>Go back</Button>
-        </Link>
-      </div> */}
 
       <form onSubmit={formik.handleSubmit}>
         <SmartInput label='Name' name='name' formik={formik} />

@@ -8,7 +8,7 @@ import PageHeader from '../components/UI/PageHeader';
 const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 
 export default function PetsPage() {
-  const [petsArr, setPetsArr] = useApiData(url);
+  const [petsArr, setPetsArr, isLoading] = useApiData(url);
 
   console.log('petsArr ===', petsArr);
 
@@ -16,12 +16,7 @@ export default function PetsPage() {
     <div className='container'>
       <PageHeader title='Pets List' to='/pets/add' linkText='Add pet' />
 
-      {/* <div className='my-5 flex items-center justify-between'>
-        <h1 className='text-4xl'>Pets List</h1>
-        <Link to='/pets/add'>
-          <Button>Add pet</Button>
-        </Link>
-      </div> */}
+      {isLoading && <p className='text-4xl px-4 py-3 border rounded-md text-center'>Loading... </p>}
       <ul className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {petsArr.map((pObj) => (
           <SinglePetCard key={pObj.id} item={pObj} />
