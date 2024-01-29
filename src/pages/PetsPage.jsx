@@ -19,20 +19,21 @@ export default function PetsPage() {
         </Link>
       </div>
       <ul>
-        <li>
-          <Card>
-            <h3 className='text-xl mb-4'>Lesse</h3>
-            <p>data</p>
-            <p>email</p>
-            <div className='flex'>
-              <Button>View Logs</Button>
-              <Button outline>Delete</Button>
-            </div>
-          </Card>
-        </li>
-        <li>one pet</li>
-        <li>one pet</li>
-        <li>one pet</li>
+        {petsArr.map((pObj) => (
+          <li key={pObj.id}>
+            <Card>
+              <h3 className='text-xl mb-4'>{pObj.name}</h3>
+              <p>{new Date(pObj.dob).toLocaleDateString('lt-LT')}</p>
+              <p>{pObj.client_email}</p>
+              <div className='flex gap-2 mt-3 '>
+                <Link to={'/pets/1'}>
+                  <Button>View Logs</Button>
+                </Link>
+                <Button outline>Delete</Button>
+              </div>
+            </Card>
+          </li>
+        ))}
       </ul>
     </div>
   );
