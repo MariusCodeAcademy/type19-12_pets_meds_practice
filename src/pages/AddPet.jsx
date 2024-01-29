@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
 import SmartInput from '../components/UI/SmartInput';
+import * as Yup from 'yup';
 
 const samplePet = {
   name: 'Lese',
@@ -15,6 +16,11 @@ export default function AddPet() {
       dob: '',
       client_email: '',
     },
+    validationSchema: Yup.object({
+      name: Yup.string().min(3).max(15).required(),
+      dob: Yup.date().min('2000-01-01').required(),
+      client_email: Yup.string().lowercase().email().required(),
+    }),
     onSubmit: (values) => {
       console.log(values);
     },
