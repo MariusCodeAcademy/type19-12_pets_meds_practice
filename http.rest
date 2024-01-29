@@ -19,4 +19,13 @@ GET  https://glittery-dull-snickerdoodle.glitch.me/v1/meds
 
 POST  https://glittery-dull-snickerdoodle.glitch.me/v1/meds
 
+### view prescriptions for pet with id 430
+
+GET  https://glittery-dull-snickerdoodle.glitch.me/v1/prescriptions/430
+
+
+### Add prescriptions 
+
+POST  https://glittery-dull-snickerdoodle.glitch.me/v1/prescriptions/
+
 
