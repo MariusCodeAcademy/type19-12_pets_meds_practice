@@ -4,11 +4,11 @@ import Button from '../UI/Button';
 
 export default function SinglePetCard({ item }) {
   return (
-    <Card li>
+    <Card className='shadow-md' li>
       <h3 className='text-xl mb-4'>{item.name}</h3>
       <p>{new Date(item.dob).toLocaleDateString('lt-LT')}</p>
       <p>{item.client_email}</p>
-      <div className='flex gap-2 mt-3 '>
+      <div className='flex gap-2 mt-3 justify-center '>
         <Link to={'/pets/1'}>
           <Button>View Logs</Button>
         </Link>

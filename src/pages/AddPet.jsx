@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import SmartInput from '../components/UI/SmartInput';
 import * as Yup from 'yup';
 import Button from './../components/UI/Button';
+import PageHeader from '../components/UI/PageHeader';
+import axios from 'axios';
+
+const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 
 const samplePet = {
   name: 'Lese',
@@ -24,21 +28,33 @@ export default function AddPet() {
     }),
     onSubmit: (values) => {
       console.log(values);
+      sendPetAxios(values);
     },
   });
 
   // sukurti fn sendPetAxios(data)
   // jei sekmingai sukurem naviguojam i /
+  function sendPetAxios(data) {
+    axios
+      .post(url, data)
+      .then((res) => {
+        console.log('res.data ===', res.data);
+      })
+      .catch((error) => {
+        console.warn('ivyko klaida:', error);
+      });
+  }
 
   console.log('formik.values ===', formik.values);
   return (
     <div className='container'>
-      <div className='my-5 flex items-center justify-between'>
+      <PageHeader title='Add Pet' to='/' linkText='Go back' />
+      {/* <div className='my-5 flex items-center justify-between'>
         <h1 className='text-4xl'>Add Pet</h1>
         <Link to='/'>
           <Button>Go back</Button>
         </Link>
-      </div>
+      </div> */}
 
       <form onSubmit={formik.handleSubmit}>
         <SmartInput label='Name' name='name' formik={formik} />
