@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SmartInput from '../components/UI/SmartInput';
 import * as Yup from 'yup';
 import Button from './../components/UI/Button';
@@ -15,6 +15,8 @@ const samplePet = {
 };
 
 export default function AddPet() {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -39,6 +41,10 @@ export default function AddPet() {
       .post(url, data)
       .then((res) => {
         console.log('res.data ===', res.data);
+        if (res.data.lastID) {
+          // navigate
+          navigate('/');
+        }
       })
       .catch((error) => {
         console.warn('ivyko klaida:', error);
