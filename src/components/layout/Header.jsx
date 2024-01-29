@@ -11,6 +11,9 @@ export default function Header() {
           <NavLink className={'px-3 py-2 text-main hover:bg-slate-300'} to='/'>
             Pets
           </NavLink>
+          <NavLink className={'px-3 py-2 text-main hover:bg-slate-300'} to='/pets/add'>
+            Add pet
+          </NavLink>
           <NavLink className={'px-3 py-2 text-main hover:bg-slate-300'} to='/medications'>
             Medications
           </NavLink>
