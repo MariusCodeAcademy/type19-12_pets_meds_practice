@@ -28,7 +28,7 @@ export default function AddPet() {
       <form onSubmit={formik.handleSubmit}>
         <SmartInput label='Name' name='name' formik={formik} />
         <SmartInput type='date' label='Date of birth' name='dob' formik={formik} />
-        <SmartInput label='Client email' name='client_email' formik={formik} />
+        <SmartInput label='Client email' type='email' name='client_email' formik={formik} />
         <button type='submit'>Submit</button>
       </form>
     </div>
