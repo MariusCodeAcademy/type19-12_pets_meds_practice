@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import './styles/App.css';
 import PetsPage from './pages/PetsPage';
 import MedicationsPage from './pages/MedicationsPage';
+import AddPet from './pages/AddPet';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<PetsPage />} />
+        <Route path='/pets/add' element={<AddPet />} />
         <Route path='/medications' element={<MedicationsPage />} />
       </Routes>
     </div>
