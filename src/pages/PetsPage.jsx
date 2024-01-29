@@ -15,7 +15,7 @@ export default function PetsPage() {
     <div className='container'>
       <div className='my-5 flex items-center justify-between'>
         <h1 className='text-4xl'>Pets List</h1>
-        <Link to='/add-pet'>
+        <Link to='/pets/add'>
           <Button>Add pet</Button>
         </Link>
       </div>

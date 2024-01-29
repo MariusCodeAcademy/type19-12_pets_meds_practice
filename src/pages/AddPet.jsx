@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
 import SmartInput from '../components/UI/SmartInput';
 import * as Yup from 'yup';
+import Button from './../components/UI/Button';
 
 const samplePet = {
   name: 'Lese',
@@ -25,17 +26,25 @@ export default function AddPet() {
       console.log(values);
     },
   });
+
+  // sukurti fn sendPetAxios(data)
+  // jei sekmingai sukurem naviguojam i /
+
   console.log('formik.values ===', formik.values);
   return (
     <div className='container'>
-      <h1>AddPet</h1>
-      <Link to='/'>Go back</Link>
-      <hr />
+      <div className='my-5 flex items-center justify-between'>
+        <h1 className='text-4xl'>Add Pet</h1>
+        <Link to='/'>
+          <Button>Go back</Button>
+        </Link>
+      </div>
+
       <form onSubmit={formik.handleSubmit}>
         <SmartInput label='Name' name='name' formik={formik} />
         <SmartInput type='date' label='Date of birth' name='dob' formik={formik} />
         <SmartInput label='Client email' type='email' name='client_email' formik={formik} />
-        <button type='submit'>Submit</button>
+        <Button type='submit'>Submit</Button>
       </form>
     </div>
   );
