@@ -35,7 +35,9 @@ export default function PetsPage() {
 
   return (
     <div className='container'>
-      <PageHeader title='Pets List' to='/pets/add' linkText='Add pet' />
+      <PageHeader title='Pets List'>
+        <Button to='/pets/add'>Add pet</Button>
+      </PageHeader>
 
       {isLoading && <p className='text-4xl px-4 py-3 border rounded-md text-center'>Loading... </p>}
       <ul className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

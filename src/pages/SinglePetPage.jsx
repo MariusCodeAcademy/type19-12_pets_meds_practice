@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import PageHeader from '../components/UI/PageHeader';
 import useApiData from '../hooks/useApiData';
 import Card from '../components/UI/Card';
+import Button from '../components/UI/Button';
 
 const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/logs';
 const petsUrl = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
@@ -28,7 +29,12 @@ export default function SinglePetPage() {
 
   return (
     <div className='container'>
-      <PageHeader title={`Pet name: ${currentPetObj?.name || ''}`} to='/' linkText='Go back' />
+      <PageHeader title={`Pet name: ${currentPetObj?.name || ''}`}>
+        <Button to='/logs/add'>Add Log</Button>
+        <Button outline to='/presc/add'>
+          Add prescription
+        </Button>
+      </PageHeader>
 
       <ul className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {currentPetArr.map((logObj) => (

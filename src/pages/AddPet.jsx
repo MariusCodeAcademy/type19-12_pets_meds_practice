@@ -54,7 +54,9 @@ export default function AddPet() {
   console.log('formik.values ===', formik.values);
   return (
     <div className='container'>
-      <PageHeader title='Add Pet' to='/' linkText='Go back' />
+      <PageHeader title='Add Pet'>
+        <Button to='/'>Go back</Button>
+      </PageHeader>
 
       <form onSubmit={formik.handleSubmit}>
         <SmartInput label='Name' name='name' formik={formik} />
