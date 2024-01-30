@@ -9,7 +9,7 @@ export default function SinglePetCard({ item }) {
       <p>{new Date(item.dob).toLocaleDateString('lt-LT')}</p>
       <p>{item.client_email}</p>
       <div className='flex gap-2 mt-3 justify-center '>
-        <Link to={'/pets/1'}>
+        <Link to={`/pets/${item.id}`}>
           <Button>View Logs</Button>
         </Link>
         <Button outline>Delete</Button>
