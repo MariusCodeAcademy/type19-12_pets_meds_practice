@@ -7,10 +7,12 @@ function SmartInput({ name, formik, type = 'text', placeholder }) {
     return <h2>Nera formiko!!!</h2>;
   }
 
+  const Element = type === 'textarea' ? 'textarea' : 'input';
+
   return (
     <label className='block mb-4'>
       <span className='text-lg block first-letter:uppercase'>{name}</span>
-      <input
+      <Element
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values[name]}
@@ -21,6 +23,7 @@ function SmartInput({ name, formik, type = 'text', placeholder }) {
             : 'border-slate-300'
         } `}
         type={type}
+        rows={type === 'textarea' ? 4 : undefined}
         placeholder={placeholder || 'Enter ' + name}
       />
       {formik.touched[name] && formik.errors[name] && (

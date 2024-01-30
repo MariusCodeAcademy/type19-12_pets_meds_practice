@@ -6,6 +6,7 @@ import PetsPage from './pages/PetsPage';
 import MedicationsPage from './pages/MedicationsPage';
 import AddPet from './pages/AddPet';
 import SinglePetPage from './pages/SinglePetPage';
+import AddLogPage from './pages/AddLogPage';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path='/' element={<PetsPage />} />
         <Route path='/pets/add' element={<AddPet />} />
         <Route path='/pets/:petId' element={<SinglePetPage />} />
+        <Route path='/logs/add/:petId' element={<AddLogPage />} />
         <Route path='/medications' element={<MedicationsPage />} />
       </Routes>
     </div>
