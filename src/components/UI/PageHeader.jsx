@@ -6,7 +6,7 @@ export default function PageHeader({ title, to, linkText }) {
     <div className='my-5 flex items-center justify-between'>
       <h1 className='text-4xl'>{title}</h1>
       <Link to={to}>
-        <Button>Go back</Button>
+        <Button>{linkText}</Button>
       </Link>
     </div>
   );
