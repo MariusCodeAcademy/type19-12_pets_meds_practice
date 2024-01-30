@@ -4,6 +4,7 @@ import useApiData from '../hooks/useApiData';
 import Card from '../components/UI/Card';
 
 const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/logs';
+const petsUrl = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 
 export default function SinglePetPage() {
   // gauti petId
@@ -14,11 +15,20 @@ export default function SinglePetPage() {
     `${url}/${petId}`,
   );
   console.log('currentPetArr ===', currentPetArr);
-  const currentPetObj = currentPetArr[0];
+  // const currentPetObj = currentPetArr[0];
+
+  const [allPetsArr] = useApiData(petsUrl);
+  console.log('allPetsArr ===', allPetsArr);
+  const currentPetObj = allPetsArr.find((pObj) => {
+    // console.log('pObj.id ===', pObj.id);
+    // console.log('petId ===', petId);
+    return +pObj.id === +petId;
+  });
+  console.log('currentPetObj ===', currentPetObj);
 
   return (
     <div className='container'>
-      <PageHeader title={`Pet name: ${currentPetObj?.name}`} to='/' linkText='Go back' />
+      <PageHeader title={`Pet name: ${currentPetObj?.name || ''}`} to='/' linkText='Go back' />
 
       <ul className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {currentPetArr.map((logObj) => (
