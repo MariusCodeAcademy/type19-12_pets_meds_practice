@@ -9,18 +9,21 @@ import axios from 'axios';
 const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 
 export default function PetsPage() {
-  const [petsArr, setPetsArr, isLoading] = useApiData(url);
+  const [petsArr, setPetsArr, isLoading, error, reFetch] = useApiData(url);
 
   function handleDelete(idTodelete) {
     console.log('handleDelete ===', idTodelete);
     // kai gaunam sekminga istrynimo atsakyma is back end
+
     axios
       .delete(`${url}/${idTodelete}`)
       .then((resp) => {
         console.log('resp ===', resp);
         console.log('resp.data ===', resp.data);
         // atnaujinti sarasa
-        setPetsArr(petsArr.filter((pObj) => pObj.id !== idTodelete));
+        // setPetsArr(petsArr.filter((pObj) => pObj.id !== idTodelete));
+        // parisiusti is naujo
+        reFetch();
       })
       .catch((error) => {
         console.warn('ivyko klaida:', error);

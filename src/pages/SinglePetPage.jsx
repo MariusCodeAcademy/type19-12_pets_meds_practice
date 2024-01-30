@@ -10,7 +10,9 @@ export default function SinglePetPage() {
   const { petId } = useParams();
   console.log('petId ===', petId);
 
-  const [currentPetArr, setCurrentPetArr, isLoading] = useApiData(`${url}/${petId}`);
+  const [currentPetArr, setCurrentPetArr, isLoading, error, reFetch] = useApiData(
+    `${url}/${petId}`,
+  );
   console.log('currentPetArr ===', currentPetArr);
   const currentPetObj = currentPetArr[0];
 
