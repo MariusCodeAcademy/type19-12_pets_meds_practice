@@ -8,8 +8,6 @@ import axios from 'axios';
 
 const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/pets';
 
-// some comment
-
 const samplePet = {
   name: 'Lese',
   dob: 1698883200000,
