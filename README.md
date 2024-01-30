@@ -1,12 +1,20 @@
-# Steps to tailwind
+# Practive
 
-1. install router `npm i react-router-dom`
-2. apjuosti su BrowserRouter App
-3. sukurit Routes su Route elementais
-4. sukurti Headeryje nuorodas i
+## SinglePetPage
 
-   / - PetsPage
+1. parsiusti ir prescription ir logs
 
-   /medications - MedicationsPage
+2. padaryti kad veiktu toggle mygtukai
+   ![](assets/2024-01-30-12-04-32.png)
 
-   /add-pet - AddPetPage
+## Add medication
+
+1. sukurti nauja vaista
+
+## PresriptionPage
+
+1. pabaigti sukurti nauja perscriptions
+
+2. prideti mygtuka go back
+
+3. validacija comment
