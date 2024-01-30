@@ -20,6 +20,7 @@ status: Joi.string().trim().required(),
 const url = 'https://glittery-dull-snickerdoodle.glitch.me/v1/logs';
 
 export default function AddLogPage() {
+  const navigate = useNavigate();
   const { petId } = useParams();
   const formik = useFormik({
     initialValues: {
@@ -48,6 +49,7 @@ export default function AddLogPage() {
         console.log('res.data ===', res.data);
         if (res.data.lastID) {
           // navigate
+          navigate(`/pets/${petId}`);
         }
       })
       .catch((error) => {
@@ -58,7 +60,7 @@ export default function AddLogPage() {
   return (
     <div className='container'>
       <PageHeader title='Add Log'>
-        <Button to='/'>Go back</Button>
+        <Button to={`/pets/${petId}`}>Go back</Button>
       </PageHeader>
       <form onSubmit={formik.handleSubmit}>
         <SmartInput label='Status' name='status' formik={formik} />
