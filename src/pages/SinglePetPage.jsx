@@ -30,7 +30,7 @@ export default function SinglePetPage() {
   return (
     <div className='container'>
       <PageHeader title={`Pet name: ${currentPetObj?.name || ''}`}>
-        <Button to='/logs/add'>Add Log</Button>
+        <Button to='/logs/add/5'>Add Log</Button>
         <Button outline to='/presc/add'>
           Add prescription
         </Button>
