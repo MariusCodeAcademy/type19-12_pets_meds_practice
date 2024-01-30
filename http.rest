@@ -14,7 +14,7 @@ POST https://glittery-dull-snickerdoodle.glitch.me/v1/logs
 
 ### view all med 
 
-GET  https://glittery-dull-snickerdoodle.glitch.me/v1/meds
+GET  https://glittery-dull-snickerdoodle.glitch.me/v1/meds?limit=100
 
 ### add med
 
